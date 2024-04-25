@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './connection/connection.js';
+import userRoutes from './Routes/UserRoutes.js';
 
 const app = express();
 app.use(cors());
@@ -12,8 +13,9 @@ dotenv.config();
 app.get('/' , (req,res)=> {
     res.send('Hello World');
 })
+app.use("/api/user", userRoutes);
 
-console.log(process.env.PORT);
+
 
 connectDB();
 app.listen(process.env.PORT , () => {
