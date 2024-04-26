@@ -1,11 +1,12 @@
-import UserModel from "../models/userModel";
+import UserModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
 export const createUser = async (req , res) =>{
     const { name, email, password, age, gender , DOB} = req.body;
-    if(!name || !email || !password || !age || !gender || !DOB){
+    console.log(req.body);
+    if(!name || !email || !password || !age || !gender){
         return res.status(422).json({message : "Please fill all the fields"});
     }
     try {
