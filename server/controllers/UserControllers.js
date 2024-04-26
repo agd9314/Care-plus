@@ -1,11 +1,11 @@
 import UserModel from "../models/userModel.js";
+import DoctorModel from "../models/docterModel.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
 export const createUser = async (req , res) =>{
     const { name, email, password, age, gender , DOB} = req.body;
-    console.log(req.body);
     if(!name || !email || !password || !age || !gender){
         return res.status(422).json({message : "Please fill all the fields"});
     }
@@ -65,5 +65,16 @@ export const loginUser = async (req , res) =>{
         return res
           .status(500)
           .json({ message: " error while logging in user" });
+    }
+}
+
+
+export const getallDoctor = async (req, res) => {
+    try {
+        const doctor = await DoctorModel.find();
+        res.status(200).json({ doctor });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: " error while fetching doctors" });
     }
 }

@@ -9,7 +9,6 @@ const appointmentSchema = mongoose.Schema({
     patientEmail : {
         type: String,
         required: true,
-        unique: true
     },
     patientPhone : {
         type: Number,
@@ -23,16 +22,24 @@ const appointmentSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    conformStatus : {
+        type: Boolean,
+        default : false
+    },
+    status : {
+        type : String,
+        enum : ["confirm", "pending" , "cancelled"],
+    },
     bookedDate : {
-        type: Date,
-        required: true
+        type: String,
+        default : new Date().toLocaleDateString(),
     },
     bookedTime : {
         type: String,
-        required: true
+        default : new Date().toLocaleTimeString()
     },
     scheduleDate : {
-        type: Date,
+        type: String,
         required: true
     },
     scheduleTime : {

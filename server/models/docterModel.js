@@ -39,6 +39,9 @@ export const doctorSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    address : {
+        type : String
+    }
 })
 
 const DoctorModel = mongoose.model('Doctor', doctorSchema);
