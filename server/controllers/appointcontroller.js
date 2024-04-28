@@ -57,7 +57,7 @@ export const getallappointments = async (req, res) => {
 };
 export const getallappointmentsconfirm = async (req, res) => {
   try {
-    const patinet = await AppointmentModel.find({confirmStatus : true});
+    const patinet = await AppointmentModel.find({status : "confirmed"});
     res.status(200).json({ patinet });
   } catch (error) {
     console.log(error);
@@ -67,7 +67,7 @@ export const getallappointmentsconfirm = async (req, res) => {
 
 export const getallappointmentspending = async (req, res) => {
   try {
-    const patinet = await AppointmentModel.find({confirmStatus : false});
+    const patinet = await AppointmentModel.find({status : "pending"});
     res.status(200).json({ patinet });
     } catch (error) {
     console.log(error);
@@ -95,4 +95,14 @@ export const getallappointmentsTodayDate = async (req, res) => {
         console.log(error);
         return res.status(500).json({ message: " error while fetching patients" });
     }
+}
+export const getConfrimAppointment = async (req , res) =>{
+  const {status , id} = req.body;
+  try {
+    await AppointmentModel.Update({_id : id} , { status : status });
+    res.status(200).json({message : "Appointment updated successfully"});
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: " error while updating appointment" });
+  }
 }
