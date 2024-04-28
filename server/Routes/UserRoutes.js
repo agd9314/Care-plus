@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createUser, getallDoctor, loginUser } from "../controllers/UserControllers.js";
-import { createAppointment, getallappointmentscancel, getallappointmentsconfirm, getallappointmentspending } from "../controllers/appointcontroller.js";
+import { createAppointment, getallappointments, getallappointmentscancel, getallappointmentsconfirm, getallappointmentspending } from "../controllers/appointcontroller.js";
 import jwtVerify from "../middleware/jwtVerify.js";
 
 
@@ -13,6 +13,7 @@ userRoutes.post("/register", createUser );
 userRoutes.post("/login",loginUser);
 userRoutes.post("/bookappointment", jwtVerify, createAppointment);
 userRoutes.get("/getalldoctor", jwtVerify, getallDoctor);
+userRoutes.get("/getallappointments", jwtVerify, getallappointments);
 userRoutes.get(
   "/getallappointmentsconfirm",
   jwtVerify,

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
@@ -7,13 +7,19 @@ function Login() {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
+  useEffect(()=> {
+    const token = localStorage.getItem('token')
+    if(token) {
+      navigate('/patien-book')
+    }
+  })
   const handleSubmit = async () => {
     try {
       const res = await axios.post('http://localhost:3000/api/user/login', {
         email,
         password
       })
-      localStorage.setItem('token', res.data.user)
+      localStorage.setItem('token', res.data.token)
       localStorage.setItem('user', JSON.stringify(res.data.user))
       navigate('/patien-book')
     } catch (error) {
