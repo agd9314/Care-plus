@@ -14,7 +14,7 @@ function PatientBook() {
     const token = localStorage.getItem('token')
     const user = localStorage.getItem('user')
     if(!token){
-      navigate('/login')
+      navigate('/patien-book')
     }
 
     if(user){

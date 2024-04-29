@@ -8,6 +8,10 @@ import PatientBook, { Home } from "./components/PatientBook.jsx";
 import { MyBookings } from "./components/Mybooking.jsx";
 import { AllDoctors } from "./components/AllDoctor.jsx";
 import { Settings } from "./components/Setting.jsx";
+import Register from './components/Register.jsx'
+import RegisterDoctor from './components/RegisterDoctor.jsx'
+import LoginDoctor from "./components/LoginDoctor.jsx";
+import DoctorBook, { Mypatients } from "./components/DoctorBook.jsx";
 import { ScheduledSession } from "./components/ScheduleSession.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -23,6 +27,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 index: true,
                 element: <MainChildren />,
               },
+
+
               {
                 path: "/patien-book",
                 element: <PatientBook />,
@@ -49,12 +55,49 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   },
                 ],
               },
+
+              {
+                path: "/doctor-book",
+                element: <DoctorBook />,
+                children: [
+                  {
+                    index: true,
+                    element: <Home />,
+                  },
+                  {
+                    path: "/doctor-book/settings",
+                    element: <Settings/>
+                  },
+                  {
+                    path: "/doctor-book/Mypatients",
+                    element: <Mypatients/>
+                  },
+                  {
+                    path: "/doctor-book/MyBookings",
+                    element: <MyBookings/>
+                  },
+                ],
+              },
+
             ],
+
           },
           {
             path: "/login",
             element: <Login />,
           },
+          {
+            path: "/register",
+            element: <Register />,
+          },
+          {
+            path: "/register-doctor",
+            element: <RegisterDoctor />,
+          },
+          {
+            path: "login-doctor/",
+            element: <LoginDoctor />,
+          }
         ])}
       />
     </main>
