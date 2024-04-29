@@ -16,17 +16,17 @@ export const MyBookings = () => {
             console.log(err)
         })
     },[])
-
-    const handlesumbit = () => {
-        console.log(bookings)
-    }
     return <div>
-        <body className="bg-zinc-100 p-4">
+        <body className="bg-zinc-100 p-4 grid grid-cols-3 items-center gap-4">
+
             {bookings.map((booking , index)=>{
                 return <div key={index} className="max-w-4xl mx-auto bg-white shadow-lg">
                     <div className="mb-6">
                         <div className="mt-4 bg-zinc-50 p-4 rounded-lg">
                             <div className="bg-white p-4 rounded-lg shadow">
+                                <div className="mb-4">
+                                    <div className="text-sm">Appointment Number: {booking._id} </div>
+                                </div>
                                 <div className="mb-4">
                                     <div className="text-sm">Booking Date: <span className="font-semibold">{booking.
                                         bookedDate}</span></div>
@@ -44,19 +44,13 @@ export const MyBookings = () => {
                                         status }</span></div>
                                 </div>
                                 <div className="mb-4">
-                                    <div className="text-sm">Appointment Number: {booking._id} </div>
-                                </div>
-                                <div className="mb-4">
                                     <div className="text-sm">Doctor Name :  {booking.
                                         doctorName}</div>
                                     <div className="text-sm">Scheduled Date: <span className="font-semibold">{booking.
                                         scheduleDate}</span></div>
                                     <div className="text-sm">Starts: <span className="font-semibold">{booking.scheduleTime}</span></div>
                                 </div>
-                                <button onClick={handlesumbit} className="bg-zinc-300 hover:bg-zinc-400 text-black font-bold py-2 px-4 rounded">Cancel Booking</button>
-                                {/* {bookings.map((booking , index) => {
-                                console.log(booking._id)
-                            })} */}
+
                             </div>
                         </div>
                     </div>

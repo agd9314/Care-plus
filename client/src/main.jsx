@@ -4,7 +4,7 @@ import App, { MainChildren } from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
-import PatientBook, { Home, ScheduledSession } from "./components/PatientBook.jsx";
+import PatientBook, { Home } from "./components/PatientBook.jsx";
 import { MyBookings } from "./components/Mybooking.jsx";
 import { AllDoctors } from "./components/AllDoctor.jsx";
 import { Settings } from "./components/Setting.jsx";
@@ -12,6 +12,7 @@ import Register from './components/Register.jsx'
 import RegisterDoctor from './components/RegisterDoctor.jsx'
 import LoginDoctor from "./components/LoginDoctor.jsx";
 import DoctorBook, { Mypatients } from "./components/DoctorBook.jsx";
+import { ScheduledSession } from "./components/ScheduleSession.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
