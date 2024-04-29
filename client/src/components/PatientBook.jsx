@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaCircleUser } from "react-icons/fa6";
 import { MdHomeFilled } from "react-icons/md";
 import { BiSolidFirstAid } from "react-icons/bi";
@@ -8,6 +9,19 @@ import { IoSettings } from "react-icons/io5";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link, Outlet, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 function PatientBook() {
+  const navigate = useNavigate();
+  const [patient , setpatient] = useState({})
+  useEffect(()=> {
+    const token = localStorage.getItem('token')
+    const user = localStorage.getItem('user')
+    if(!token){
+      navigate('/patien-book')
+    }
+
+    if(user){
+      setpatient(JSON.parse(user))
+    }
+  },[])
   return (
     <div>
       <div className="min-h-screen bg-zinc-100 flex">
@@ -17,11 +31,15 @@ function PatientBook() {
               {/* <img src="https://placehold.co/40x40" alt="profile" className="rounded-full"/> */}
               <FaCircleUser className=" text-3xl" />
               <div>
-                <div className="font-bold">Test Patient..</div>
-                <div className="text-sm text-zinc-600">patient@edoc.com</div>
+                <div className="font-bold">{patient.name}</div>
+                <div className="text-sm text-zinc-600">{patient.email}</div>
               </div>
             </div>
-            <button className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded">
+            <button onClick={()=>{
+              localStorage.removeItem('token')
+              localStorage.removeItem('user')
+              navigate('/login')
+            }}  className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded">
               Log out
             </button>
           </div>
@@ -225,67 +243,12 @@ export const Home = () => {
         </div>
     </div>
 }
-export const Settings = () => {
-    return <div>
-        setting
-    </div>
-}
-
-export const AllDoctors = () => {
-    return <div>
-        All doctors are here !
-    </div>
-}
 
 
-export const MyBookings = () => {
-  return <div>
 
-        <body className="bg-zinc-100 p-4">
-            <div className="max-w-4xl mx-auto bg-white shadow-lg p-6">
-                <div className="flex justify-between items-center mb-4">
-                    <button className="text-blue-500 hover:text-blue-700 font-semibold">Back</button>
-                    <h1 className="text-xl font-semibold">My Bookings history</h1>
-                    <div>
-                        <span className="text-sm">Today's Date</span>
-                        <span className="text-lg font-semibold">2022-06-03</span>
-                    </div>
-                </div>
-        
-                <div className="mb-6">
-                    <h2 className="text-lg font-semibold">My Bookings (1)</h2>
-                    <div className="mt-4 bg-zinc-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-4">
-                            <div>
-                                <label htmlFor="date" className="font-semibold">Date:</label>
-                                <input type="date" id="date" className="ml-2 p-1 border rounded"/>
-                            </div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Filter</button>
-                        </div>
-                        <div className="bg-white p-4 rounded-lg shadow">
-                            <div className="mb-4">
-                                <div className="text-sm">Booking Date: <span className="font-semibold">2022-06-03</span></div>
-                                <div className="text-sm">Reference Number: <span className="font-semibold">OC-000-1</span></div>
-                            </div>
-                            <div className="mb-4">
-                                <h3 className="text-lg font-semibold">Test Session</h3>
-                                <div className="text-sm">Appointment Number:</div>
-                            </div>
-                            <div className="mb-4">
-                                <div className="text-3xl font-bold">01</div>
-                                <div className="text-sm">Test Doctor</div>
-                                <div className="text-sm">Scheduled Date: <span className="font-semibold">2050-01-01</span></div>
-                                <div className="text-sm">Starts: <span className="font-semibold">01:00 (24h)</span></div>
-                            </div>
-                            <button className="bg-zinc-300 hover:bg-zinc-400 text-black font-bold py-2 px-4 rounded">Cancel Booking</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </body>
-        
-  </div>
-}
+
+
+
 
 
 

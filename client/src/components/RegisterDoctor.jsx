@@ -1,13 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import { FaUserDoctor } from "react-icons/fa6";
 
-function Register() {
+function RegisterDoctor() {
   return (
     <div>
+      <div>
       <div className=' flex h-full w-screen items-center p-4 bg-[#16202a]'>
       {/* <body className="bg-zinc-900 text-white min-h-screen flex items-center justify-center"/> */}
             <div className="w-full max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
-                <h1 className="text-4xl font-bold">Register Your self  as Patient</h1>
+                <h1 className="text-4xl font-bold flex flex-col gap-6"> <span>Register Your self  as Doctor</span> <FaUserDoctor></FaUserDoctor></h1>
                 <p className="text-zinc-400">Lorem ipsum dolor sit amet.</p>
                 <div>
                     <label  htmlFor="name" className="block text-sm font-medium text-zinc-300">Name*</label>
@@ -30,6 +32,22 @@ function Register() {
                 </div>
 
 
+                <div>
+                    <label  htmlFor="specialization" className="block text-sm font-medium text-zinc-300">Specialization*</label>
+                    <input type="text" name="specialization" id="specialization" className="mt-1 block w-full px-3 py-2 bg-zinc-700 border border-zinc-600 rounded-md shadow-sm placeholder-zinc-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="specialization" onChange={(e) => specialization(e.target.value)}  />
+                </div>
+
+
+                <div>
+                    <label  htmlFor="degree" className="block text-sm font-medium text-zinc-300">Degree*</label>
+                    <input type="text" name="degree" id="degree" className="mt-1 block w-full px-3 py-2 bg-zinc-700 border border-zinc-600 rounded-md shadow-sm placeholder-zinc-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="degree" onChange={(e) => degree(e.target.value)}  />
+                </div>
+
+
+                <div>
+                    <label  htmlFor="address" className="block text-sm font-medium text-zinc-300">Address*</label>
+                    <textarea rows="4" cols="20" type="text" name="address" id="address" className="mt-1 block w-full px-3 py-2 bg-zinc-700 border border-zinc-600 rounded-md shadow-sm placeholder-zinc-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="address" onChange={(e) => address(e.target.value)}  />
+                </div>
 
                 <div>
                     <label  htmlFor="email" className="block text-sm font-medium text-zinc-300">Email*</label>
@@ -51,11 +69,12 @@ function Register() {
                 <button className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                     Register
                 </button>
-                <p className="text-xs text-zinc-400 text-center">Already registerd ? <Link className=' text-blue-500' to={"/login"}>click here to Login</Link></p>
+                <p className="text-xs text-zinc-400 text-center">Already registerd ? <Link className=' text-blue-500' to={"/login-doctor"}>click here to Login</Link></p>
             </div>
+    </div>
     </div>
     </div>
   )
 }
 
-export default Register
+export default RegisterDoctor

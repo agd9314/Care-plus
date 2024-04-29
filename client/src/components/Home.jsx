@@ -1,7 +1,12 @@
 import React from 'react'
-// import wallpaper from '../assets/mailWallpaper.avif'
 import { FaUserDoctor } from "react-icons/fa6";
+import { Link } from 'react-router-dom'
+import { TiUser } from "react-icons/ti";
+import doctorGif from '../assets/MentalTherapy.mp4'
+
 function Home() {
+
+  
   return (
     <div>
       <div className=" flex flex-row justify-between">
@@ -18,15 +23,21 @@ function Home() {
                         <h2 className="text-4xl font-bold text-blue-800 mb-4">Take Care Of Your Health Mission</h2>
                         <p className="text-blue-700 mb-6">At health grades, we take the guesswork out of finding the right doctors and care for you and your family.</p>
                         <div className="flex space-x-4">
-                            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex flex-row"><span>Continue as Patient</span><span><FaUserDoctor className=' mt-4'/></span></button>
-                            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex flex-row"> <span>Continue as Docotor</span><span><FaUserDoctor className=' mt-4'/></span></button>
+                            <Link to={"/login"}>
+                              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex flex-row"><span>Continue as Patient</span><span><FaUserDoctor className=' mt-4'/></span></button>
+                              </Link>
+
+                              <Link to={"/login-doctor"}>
+                              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex flex-row"> <span>Continue as Docotor</span><span><TiUser className=' mt-4 size-4'/></span></button>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </main>
         </body>
         <div className=' h-screen w-full flex justify-center items-center'>
-          <h1 className=' h-4'>image</h1>
+          <video autoPlay loop src={doctorGif}></video>
+          
         </div>
       </div>
     </div>

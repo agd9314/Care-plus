@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  Outlet,
-  Route,
-  BrowserRouter as Router,
-  Routes,
-} from "react-router-dom";
-import Navbar from "./components/Navbar";
+import {Outlet} from "react-router-dom";
 import Home from "./components/Home";
-import Login from "./components/Login";
-import PatienBook from "./components/PatientBook";
-
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
       <>
         <Outlet />
       </>
