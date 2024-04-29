@@ -5,6 +5,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import PatientBook, { Home, ScheduledSession, Settings, AllDoctors, MyBookings} from "./components/PatientBook.jsx";
+import Register from "./components/Register.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -51,6 +52,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path: "/login",
             element: <Login />,
           },
+          {
+            path: "/register",
+            element: <Register />,
+          }
         ])}
       />
     </main>
