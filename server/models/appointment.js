@@ -17,7 +17,7 @@ const appointmentSchema = mongoose.Schema({
     patientAge : {
         type: Number,
         required: true
-    },22
+    },
     problem : {
         type: String,
         required: true
