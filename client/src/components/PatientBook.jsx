@@ -6,7 +6,6 @@ import { BiSolidFirstAid } from "react-icons/bi";
 import { TbHeartRateMonitor } from "react-icons/tb";
 import { FaBookmark } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link, Outlet, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 function PatientBook() {
   const navigate = useNavigate();
@@ -21,7 +20,7 @@ function PatientBook() {
     if(user){
       setpatient(JSON.parse(user))
     }
-  })
+  },[])
   return (
     <div>
       <div className="min-h-screen bg-zinc-100 flex">
@@ -114,45 +113,7 @@ function PatientBook() {
 
 export default PatientBook;
 
-export const ScheduledSession = ()=>{
-    return (<div className="flex-1 p-10">
-    <div className="flex justify-between items-center mb-10">
-      <button className=" bg-blue-200 text-blue-500 px-4 py-2 rounded flex flex-row gap-1">
-        <span className=" relative mt-[5px]">
-          <IoMdArrowRoundBack />
-        </span>{" "}
-        <span>Back</span>{" "}
-      </button>
-      <div className="flex space-x-2">
-        <input
-          type="text"
-          placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)"
-          className="border p-2 rounded w-96"
-        />
-        <button className="bg-blue-500 text-white px-4 py-2 rounded">
-          Search
-        </button>
-      </div>
-      <div className="flex items-center space-x-2 ">
-        <div className=" flex flex-col">
-          <span>Today's Date</span>
-        </div>
-        <input type="date" />
-      </div>
-    </div>
-    <div className="bg-white p-5 rounded shadow">
-      <h2 className="text-xl font-bold mb-4">Test Session</h2>
-      <div className="mb-4">
-        <div>Test Doctor</div>
-        <div>2050-01-01</div>
-        <div>Starts: @18:00 (24h)</div>
-      </div>
-      <button className="w-full bg-blue-500 text-white py-2 px-4 rounded">
-        Book Now
-      </button>
-    </div>
-  </div>)
-}
+
 export const Home = () => {
     return <div>
         <div className="bg-white p-8">

@@ -96,10 +96,10 @@ export const getallappointmentsTodayDate = async (req, res) => {
         return res.status(500).json({ message: " error while fetching patients" });
     }
 }
-export const getConfrimAppointment = async (req , res) =>{
+export const updateConfrimAppointment = async (req , res) =>{
   const {status , id} = req.body;
   try {
-    await AppointmentModel.Update({_id : id} , { status : status });
+    await AppointmentModel.findByIdAndUpdate(id , {status : status});
     res.status(200).json({message : "Appointment updated successfully"});
   } catch (error) {
     console.log(error);

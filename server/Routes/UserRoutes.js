@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createUser, getallDoctor, loginUser } from "../controllers/UserControllers.js";
-import { createAppointment, getallappointments, getallappointmentscancel, getallappointmentsconfirm, getallappointmentspending } from "../controllers/appointcontroller.js";
+import { createAppointment, getallappointments, getallappointmentsTodayDate, getallappointmentscancel, getallappointmentsconfirm, getallappointmentspending, updateConfrimAppointment } from "../controllers/appointcontroller.js";
 import jwtVerify from "../middleware/jwtVerify.js";
 
 
@@ -29,6 +29,8 @@ userRoutes.get(
   jwtVerify,
   getallappointmentscancel
 );
+userRoutes.put("/updateappointment", jwtVerify, updateConfrimAppointment);
+userRoutes.get("/getallappointmentsTodayDate", jwtVerify, getallappointmentsTodayDate);
 
 
 
