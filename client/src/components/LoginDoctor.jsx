@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
+import { IoArrowBack } from "react-icons/io5";
 
 function LoginDoctor() {
   const [email, setEmail] = useState('')
@@ -24,6 +25,11 @@ function LoginDoctor() {
   return (
     <div>
       <div className=' flex h-screen w-screen items-center p-4 bg-[#16202a]'>
+      <Link to={"/"}>
+      <button className="fixed top-0 left-0 mt-4 mr-4 px-6 py-4  text-white bg-transparent rounded-full font-semibold text-lg overflow-hidden transition-all duration-250 hover:text-blue-500 hover:before:w-full">
+        <IoArrowBack className=' size-[30px]'></IoArrowBack>
+      </button>   
+      </Link>
             <div className="w-full max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
                 <h1 className="text-4xl font-bold">Hello Doctor !</h1>
                 <p className="text-zinc-400"> Lorem ipsum dolor sit amet.</p>

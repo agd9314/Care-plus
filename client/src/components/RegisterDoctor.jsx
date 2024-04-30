@@ -4,6 +4,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { IoArrowBack } from "react-icons/io5";
 
 function RegisterDoctor() {
     const navigate = useNavigate()
@@ -50,7 +51,7 @@ function RegisterDoctor() {
       </button>
       </Link>
       {/* <body className="bg-zinc-900 text-white min-h-screen flex items-center justify-center"/> */}
-            <div className="w-full ml-9 max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
+            <div className=" ml-9 w-full max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
                 <h1 className="text-4xl font-bold flex flex-col gap-6"> <span>Register Your self  as Doctor</span> <FaUserDoctor></FaUserDoctor></h1>
                 <p className="text-zinc-400">Lorem ipsum dolor sit amet.</p>
                 <div>
