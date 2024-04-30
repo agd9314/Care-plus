@@ -10,6 +10,7 @@ export const ScheduledSession = () => {
         })
             .then((res) => {
                 setSession(res.data.patinet)
+                localStorage.setItem('session', JSON.stringify(res.data.patinet))
             })
             .catch((err) => {
                 console.log(err)

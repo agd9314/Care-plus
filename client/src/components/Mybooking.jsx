@@ -11,13 +11,14 @@ export const MyBookings = () => {
         })
         .then((res)=>{
             setBookings(res.data.patinet)
+            localStorage.setItem('appointment', JSON.stringify(res.data.patinet))
         })
         .catch((err)=>{
             console.log(err)
         })
     },[])
     return <div>
-        <body className="bg-zinc-100 p-4 grid grid-cols-3 items-center gap-4">
+        <div className="bg-zinc-100 p-4 grid grid-cols-3 items-center gap-4">
 
             {bookings.map((booking , index)=>{
                 return <div key={index} className="max-w-4xl mx-auto bg-white shadow-lg">
@@ -57,7 +58,7 @@ export const MyBookings = () => {
                 </div>
             })}
 
-        </body>
+        </div>
 
     </div>
 }
