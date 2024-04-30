@@ -205,11 +205,3 @@ export const Home = () => {
     </div>
 }
 
-
-
-
-
-
-
-
-

@@ -13,6 +13,7 @@ import RegisterDoctor from './components/RegisterDoctor.jsx'
 import LoginDoctor from "./components/LoginDoctor.jsx";
 import DoctorBook, { Mypatients } from "./components/DoctorBook.jsx";
 import { ScheduledSession } from "./components/ScheduleSession.jsx";
+import { PatientBookForm } from "./components/PatientBookForm.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -56,6 +57,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 ],
               },
 
+
+
+
               {
                 path: "/doctor-book",
                 element: <DoctorBook />,
@@ -81,6 +85,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
             ],
 
+
+
+
           },
           {
             path: "/login",
@@ -95,8 +102,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element: <RegisterDoctor />,
           },
           {
-            path: "login-doctor/",
+            path: "/login-doctor",
             element: <LoginDoctor />,
+          },
+          {
+            path: "/patientbookform",
+            element: <PatientBookForm />,
           }
         ])}
       />
