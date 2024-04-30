@@ -10,7 +10,7 @@ function Home() {
   return (
     <div>
       <div className=" flex flex-row justify-between">
-        <body className="bg-blue-100 w-[100%]">
+        <div className="bg-blue-100 w-[100%]">
             <header className=" bg-blue-100 py-4">
                 <div className="container mx-auto flex bg-blue-100 justify-between items-center px-6">
                     <h1 className="text-xl font-bold bg-blue-100 text-blue-600">Healthly</h1>
@@ -34,7 +34,7 @@ function Home() {
                     </div>
                 </div>
             </main>
-        </body>
+        </div>
         <div className=' h-screen w-full flex justify-center items-center'>
           <video autoPlay loop src={doctorGif}></video>
           

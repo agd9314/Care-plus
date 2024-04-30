@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 import { IoArrowBack } from "react-icons/io5";
-
+import { useNavigate } from 'react-router-dom';
 function LoginDoctor() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const navigate = useNavigate();
+  useEffect(()=> {
+    const token = localStorage.getItem('DoctorToken')
+    if(token){
+      navigate('/doctor-book')
+    }
+  },[])
   const handleSubmit =async  () => {
     try {
       const res = await axios.post('http://localhost:3000/api/doctor/login', {
@@ -16,7 +22,8 @@ function LoginDoctor() {
       })
       localStorage.setItem('DoctorToken', res.data.token)
       localStorage.setItem('Doctor', JSON.stringify(res.data.doctor))
-      alert(res.data.message)
+      navigate('/doctor-book')
+      
     } catch (error) {
       console.log(error)
       alert(error.response.data.message)

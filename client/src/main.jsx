@@ -7,7 +7,6 @@ import Login from "./components/Login.jsx";
 import PatientBook, { Home } from "./components/PatientBook.jsx";
 import { MyBookings } from "./components/Mybooking.jsx";
 import { AllDoctors } from "./components/AllDoctor.jsx";
-import { Settings } from "./components/Setting.jsx";
 import Register from './components/Register.jsx'
 import RegisterDoctor from './components/RegisterDoctor.jsx'
 import LoginDoctor from "./components/LoginDoctor.jsx";
@@ -43,10 +42,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     element: <ScheduledSession />,
                   },
                   {
-                    path: "/patien-book/settings",
-                    element: <Settings/>
-                  },
-                  {
                     path: "/patien-book/AllDoctors",
                     element: <AllDoctors/>
                   },
@@ -60,10 +55,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   }
                 ],
               },
-
-
-
-
               {
                 path: "/doctor-book",
                 element: <DoctorBook />,
@@ -73,16 +64,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     element: <Home />,
                   },
                   {
-                    path: "/doctor-book/settings",
-                    element: <Settings/>
-                  },
-                  {
                     path: "/doctor-book/Mypatients",
                     element: <Mypatients/>
-                  },
-                  {
-                    path: "/doctor-book/MyBookings",
-                    element: <MyBookings/>
                   },
                 ],
               },

@@ -34,8 +34,6 @@ export const MyBookings = () => {
                                             bookedTime}</span></div>
                                         <div className="text-sm">Patient Name: <span className="font-semibold">{booking.
                                             patientName}</span></div>
-                                        <div className="text-sm">Patient Email: <span className="font-semibold">{booking.
-                                            patientEmail}</span></div>
                                         <div className="text-sm">Patient Phone: <span className="font-semibold">{booking.
                                             patientPhone}</span></div>
                                         <div className="text-sm">Patient Problem: <span className="font-semibold">{booking.
