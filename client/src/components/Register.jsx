@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { IoArrowBack } from "react-icons/io5";
 
 function Register() {
   const navigate = useNavigate()
@@ -31,7 +32,12 @@ function Register() {
   return (
     <div>
       <div className=' flex h-full w-screen items-center p-4 bg-[#16202a]'>
-        <div className="w-full max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
+      <Link to={"/"}>
+      <button className="fixed top-0 left-0 mt-4 mr-4 px-6 py-4  text-white bg-transparent rounded-full font-semibold text-lg overflow-hidden transition-all duration-250 hover:text-blue-500 hover:before:w-full">
+        <IoArrowBack className=' size-[30px]'></IoArrowBack>
+      </button>   
+      </Link>
+        <div className=" m-6 w-full max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
           <h1 className="text-4xl font-bold">Register Your self  as Patient</h1>
           <p className="text-zinc-400">Lorem ipsum dolor sit amet.</p>
           <div>

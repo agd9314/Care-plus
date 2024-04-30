@@ -197,11 +197,3 @@ export const Home = () => {
   </div>
 }
 
-
-
-
-
-
-
-
-
