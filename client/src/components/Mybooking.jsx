@@ -17,48 +17,46 @@ export const MyBookings = () => {
             console.log(err)
         })
     },[])
-    return <div>
-        <div className="bg-zinc-100 p-4 grid grid-cols-3 items-center gap-4">
+    return <div className="w-full">
+            {bookings.length > 0 ? <div className="bg-zinc-100 p-4 grid grid-cols-3 items-center gap-4">
+                {bookings.map((booking, index) => {
+                    return <div key={index} className="max-w-4xl mx-auto bg-white shadow-lg">
+                        <div className="mb-6">
+                            <div className="mt-4 bg-zinc-50 p-4 rounded-lg">
+                                <div className="bg-white p-4 rounded-lg shadow">
+                                    <div className="mb-4">
+                                        <div className="text-sm">Appointment Number: {booking._id} </div>
+                                    </div>
+                                    <div className="mb-4">
+                                        <div className="text-sm">Booking Date: <span className="font-semibold">{booking.
+                                            bookedDate}</span></div>
+                                        <div className="text-sm">Booking Time: <span className="font-semibold">{booking.
+                                            bookedTime}</span></div>
+                                        <div className="text-sm">Patient Name: <span className="font-semibold">{booking.
+                                            patientName}</span></div>
+                                        <div className="text-sm">Patient Email: <span className="font-semibold">{booking.
+                                            patientEmail}</span></div>
+                                        <div className="text-sm">Patient Phone: <span className="font-semibold">{booking.
+                                            patientPhone}</span></div>
+                                        <div className="text-sm">Patient Problem: <span className="font-semibold">{booking.
+                                            problem}</span></div>
+                                        <div className="text-sm">Booking Satus: <span className="font-semibold">{booking.
+                                            status}</span></div>
+                                    </div>
+                                    <div className="mb-4">
+                                        <div className="text-sm">Doctor Name :  {booking.
+                                            doctorName}</div>
+                                        <div className="text-sm">Scheduled Date: <span className="font-semibold">{booking.
+                                            scheduleDate}</span></div>
+                                        <div className="text-sm">Starts: <span className="font-semibold">{booking.scheduleTime}</span></div>
+                                    </div>
 
-            {bookings.map((booking , index)=>{
-                return <div key={index} className="max-w-4xl mx-auto bg-white shadow-lg">
-                    <div className="mb-6">
-                        <div className="mt-4 bg-zinc-50 p-4 rounded-lg">
-                            <div className="bg-white p-4 rounded-lg shadow">
-                                <div className="mb-4">
-                                    <div className="text-sm">Appointment Number: {booking._id} </div>
                                 </div>
-                                <div className="mb-4">
-                                    <div className="text-sm">Booking Date: <span className="font-semibold">{booking.
-                                        bookedDate}</span></div>
-                                    <div className="text-sm">Booking Time: <span className="font-semibold">{booking.
-                                        bookedTime}</span></div>
-                                    <div className="text-sm">Patient Name: <span className="font-semibold">{booking.
-                                        patientName}</span></div>
-                                    <div className="text-sm">Patient Email: <span className="font-semibold">{booking.
-                                        patientEmail }</span></div>
-                                    <div className="text-sm">Patient Phone: <span className="font-semibold">{booking.
-                                        patientPhone }</span></div>
-                                    <div className="text-sm">Patient Problem: <span className="font-semibold">{booking.
-                                        problem }</span></div>
-                                    <div className="text-sm">Booking Satus: <span className="font-semibold">{booking.
-                                        status }</span></div>
-                                </div>
-                                <div className="mb-4">
-                                    <div className="text-sm">Doctor Name :  {booking.
-                                        doctorName}</div>
-                                    <div className="text-sm">Scheduled Date: <span className="font-semibold">{booking.
-                                        scheduleDate}</span></div>
-                                    <div className="text-sm">Starts: <span className="font-semibold">{booking.scheduleTime}</span></div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-            })}
+                })}
 
-        </div>
-
+            </div>:<div className="text-lg flex justify-center items-center font-semibold h-full w-full">No Booking</div>}
     </div>
 }

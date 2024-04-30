@@ -1,10 +1,10 @@
-import { IoIosCall } from "react-icons/io";
 import male from "../assets/maleDoc.jpg";
 import female from "../assets/femaleDoc.jpg";
-import RatingStars from "./RatingStars";
+import { useNavigate } from "react-router-dom";
 export const DoctorCard = ({
-  doctor: { name, gender, phone, specialization, experience, address },
+  doctor: { name, gender, phone, specialization, experience, address , _id },
 }) => {
+    const navigate = useNavigate();
   function mapValue(value, minInput, maxInput, minOutput, maxOutput) {
     return (
       minOutput +
@@ -49,7 +49,9 @@ export const DoctorCard = ({
         </h2>
       </div>
       <div className="mt-5 flex items-center gap-3 ">
-        <button className="bg-blue-500 rounded-full text-white px-5 py-1">
+        <button onClick={()=> {
+                  navigate(`/patien-book/patientbookform/doctorId=${_id}`);
+        }} className="bg-blue-500 rounded-full text-white px-5 py-1">
           Book Now
         </button>
       </div>

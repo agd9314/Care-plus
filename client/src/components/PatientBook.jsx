@@ -86,18 +86,6 @@ function PatientBook() {
                   <span>My Bookings</span>
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link
-                  to="/patien-book/settings"
-                  className=" hover:text-blue-500 flex trad duration-150 ease-in-out items-center  space-x-2 text-zinc-700"
-                >
-                  <i className="fas fa-cog">
-                    {" "}
-                    <IoSettings />{" "}
-                  </i>
-                  <span>Settings</span>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -117,7 +105,6 @@ export const Home = () => {
   const navigate = useNavigate();
   const appointments = JSON.parse(localStorage.getItem('appointment'));
   const session = JSON.parse(localStorage.getItem('session'));
-  console.log(session[0].scheduleDate)
   return <div className="w-full h-full">
     <div className="bg-white p-8 ">
       <div className="flex justify-between items-center mb-8">
@@ -157,7 +144,7 @@ export const Home = () => {
                 {session.length > 0 ?  <tr>
                   <td className="p-2">{session[0]._id}</td>
                   <td className="p-2">{session[0].doctorName}</td>
-                  <td className="p-2">{session[0].scheduleDate}</td> 
+                  <td className="p-2">{session[0]?.scheduleDate}</td> 
               </tr> : <tr> <td colSpan="3" className="p-2">No session today</td> </tr>}
             </tbody>
           </table>

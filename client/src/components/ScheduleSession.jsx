@@ -27,18 +27,20 @@ export const ScheduledSession = () => {
                 </div>
             </div>
         </div>
-        {session.map((session , index) => {
-            return <div key={index} className="bg-white p-5 rounded shadow">
-                <h2 className="text-xl font-bold mb-4">Test Session</h2>
-                <div className="mb-4">
-                    <div className="font-semibold">Appointment Number  :  {session._id}</div>
-                    <div className="font-semibold">Doctor Name :  {session.doctorName}</div>
-                    <div className="font-semibold">Patient Name :  {session.patientName}</div>
-                    <div className="font-semibold">Patient problem :  {session.problem}</div>
-                    <div className="font-semibold">scheduleDate  :  {session.scheduleDate}</div>
-                    <div className="font-semibold">scheduleTime  :  {session.scheduleTime}</div>
+        {session.length > 0 ? <div className="">
+            {session.map((session, index) => {
+                return <div key={index} className="bg-white p-5 rounded shadow m-2">
+                    <h2 className="text-xl font-bold mb-4">Test Session</h2>
+                    <div className="mb-4">
+                        <div className="font-semibold">Appointment Number  :  {session._id}</div>
+                        <div className="font-semibold">Doctor Name :  {session.doctorName}</div>
+                        <div className="font-semibold">Patient Name :  {session.patientName}</div>
+                        <div className="font-semibold">Patient problem :  {session.problem}</div>
+                        <div className="font-semibold">scheduleDate  :  {session.scheduleDate}</div>
+                        <div className="font-semibold">scheduleTime  :  {session.scheduleTime}</div>
+                    </div>
                 </div>
-            </div>
-        })}
+            })}
+             </div> : <div className="w-full h-[70%] flex justify-center items-center font-semibold">No Session</div>}
     </div>)
 }

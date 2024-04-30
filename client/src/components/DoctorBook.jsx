@@ -16,7 +16,6 @@ function DoctorBook() {
         <div className="w-64 bg-white p-5 flex flex-col gap-3 min-w-64">
           <div className="mb-5 flex flex-col gap-2">
             <div className="flex items-center space-x-2">
-              {/* <img src="https://placehold.co/40x40" alt="profile" className="rounded-full"/> */}
               <FaCircleUser className=" text-3xl" />
               <div>
                 <div className="font-bold">absc</div>

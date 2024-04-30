@@ -6,10 +6,6 @@ const appointmentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    patientEmail : {
-        type: String,
-        required: true,
-    },
     patientPhone : {
         type: Number,
         required: true
@@ -53,12 +49,10 @@ const appointmentSchema = mongoose.Schema({
     doctorId : {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Doctor'
     },
     userId : {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
     },
     
 })

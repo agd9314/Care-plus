@@ -54,6 +54,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     path: "/patien-book/MyBookings",
                     element: <MyBookings/>
                   },
+                  {
+                    path: "/patien-book/patientbookform/:doctorId",
+                    element: <PatientBookForm />,
+                  }
                 ],
               },
 
@@ -104,10 +108,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {
             path: "/login-doctor",
             element: <LoginDoctor />,
-          },
-          {
-            path: "/patientbookform",
-            element: <PatientBookForm />,
           }
         ])}
       />

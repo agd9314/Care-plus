@@ -6,7 +6,6 @@ dotenv.config();
 export const createAppointment = async (req , res) =>{
     const {
       patientName,
-      patientEmail,
       patientPhone,
       patientAge,
       problem,
@@ -16,14 +15,13 @@ export const createAppointment = async (req , res) =>{
       doctorId,
     } = req.body;
     const userId = req.user.id;
-    if(!patientName || !patientEmail || !patientPhone || !patientAge || !problem || !scheduleDate || !scheduleTime || !doctorName || !doctorId){
+    if(!patientName || !patientPhone || !patientAge || !problem || !scheduleDate || !scheduleTime || !doctorName || !doctorId){
         return res.status(422).json({message : "Please fill all the fields"});
     }
 
     try {
         const appointment = new AppointmentModel({
           patientName,
-          patientEmail,
           patientPhone,
           patientAge,
           problem,
@@ -47,8 +45,10 @@ export const createAppointment = async (req , res) =>{
 }
 
 export const getallappointments = async (req, res) => {
+  const { id } = req.user;
+  console.log(id);
   try {
-    const patinet = await AppointmentModel.find();
+    const patinet = await AppointmentModel.find({ userId: id});
     res.status(200).json({ patinet });
   } catch (error) {
     console.log(error);
@@ -87,9 +87,18 @@ export const getallappointmentscancel = async (req, res) => {
 };
 
 export const getallappointmentsTodayDate = async (req, res) => {
+  const { id } = req.user;
     try {
-        console.log(new Date().toLocaleDateString());
-        const patinet = await AppointmentModel.find({ scheduleDate: new Date().toLocaleDateString() });
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed, so add 1
+        const day = String(currentDate.getDate()).padStart(2, "0");
+
+        const formattedDate = `${year}-${month}-${day}`;
+        const patinet = await AppointmentModel.find({
+          scheduleDate: formattedDate,
+          userId: id,
+        });
         res.status(200).json({ patinet });
     } catch (error) {
         console.log(error);
