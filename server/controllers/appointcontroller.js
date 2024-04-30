@@ -55,6 +55,17 @@ export const getallappointments = async (req, res) => {
     return res.status(500).json({ message: " error while fetching patients" });
   }
 };
+export const Docgetallappointments = async (req, res) => {
+  const { id } = req.user;
+  console.log(id);
+  try {
+    const patinet = await AppointmentModel.find({ doctorId: id});
+    res.status(200).json({ patinet });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: " error while fetching patients" });
+  }
+};
 export const getallappointmentsconfirm = async (req, res) => {
   try {
     const patinet = await AppointmentModel.find({status : "confirmed"});

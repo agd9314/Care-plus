@@ -81,6 +81,7 @@ export const DoctorLogin = async (req , res) =>{
         doctor : {
             id : doctorExist._id,
             email : doctorExist.email,
+            name : doctorExist.name,
         }
     })
     } catch (error) {
