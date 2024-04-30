@@ -18,10 +18,6 @@ export const doctorSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    age : {
-        type: Number,
-        required: true
-    },
     gender : {
         type : String,
         required: true,

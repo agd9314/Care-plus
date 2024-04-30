@@ -44,7 +44,6 @@ export const DoctorCreate = async (req , res) => {
           email,
           password,
           phone,
-          age,
           gender,
           specialization,
           experience,
