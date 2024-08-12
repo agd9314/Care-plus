@@ -141,7 +141,7 @@ export const Home = () => {
             </thead>
             <tbody>
              
-                {session.length > 0 ?  <tr>
+                {session?.length > 0 ?  <tr>
                   <td className="p-2">{session[0]._id}</td>
                   <td className="p-2">{session[0].doctorName}</td>
                   <td className="p-2">{session[0]?.scheduleDate}</td> 
@@ -169,7 +169,7 @@ export const Home = () => {
           </thead>
           <tbody>
 
-            {appointments.length > 0 ? <tr>
+            {appointments?.length > 0 ? <tr>
               <td className="p-2">{appointments[0]._id}</td>
               <td className="p-2">{appointments[0].patientName}</td>
               <td className="p-2">{appointments[0].doctorName}</td>
