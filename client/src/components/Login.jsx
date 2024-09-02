@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate, Link} from 'react-router-dom'
 import { useState } from 'react'
 import { IoArrowBack } from "react-icons/io5";
+import Aniphone from "./FloatingPhone"
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -36,7 +37,7 @@ function Login() {
       </button>   
       </Link>
       
-      {/* <body className="bg-zinc-900 text-white min-h-screen flex items-center justify-center"/> */}
+     
             <div className="w-full max-w-lg p-8 space-y-6 rounded-lg shadow-lg text-white bg-[#16202a]">
                 <h1 className="text-4xl font-bold">Welcome Back !</h1>
                 <p className="text-zinc-400"> Lorem ipsum dolor sit amet.</p>
@@ -53,6 +54,10 @@ function Login() {
                 </button>
                 <p className="text-xs text-zinc-400 text-center">Have't registered yet ? <Link className=' text-blue-500' to={"/register"}>click here to Register as Patient</Link></p>
             </div>
+          <div className='ml-52'>
+            <Aniphone/>
+          </div>
+
     </div>
   )
 }

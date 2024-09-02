@@ -18,7 +18,7 @@ export const MyBookings = () => {
         })
     },[])
     return <div className="w-full">
-            {bookings.length > 0 ? <div className="bg-zinc-100 p-4 grid grid-cols-3 items-center gap-4">
+            {bookings.length > 0 ? <div className="bg-blue-400 p-4 grid grid-cols-3 items-center gap-4">
                 {bookings.map((booking, index) => {
                     return <div key={index} className="max-w-4xl mx-auto bg-white shadow-lg">
                         <div className="mb-6">

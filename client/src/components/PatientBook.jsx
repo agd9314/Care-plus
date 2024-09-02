@@ -114,8 +114,8 @@ export const Home = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-8 mb-8">
-        <div className="bg-zinc-100 p-4 rounded-lg shadow">
-          <div className="flex items-center justify-between mb-4">
+        <div className="bg-blue-200 p-4 rounded-lg shadow ">
+          <div className="flex items-center justify-between mb-4 ">
             <h2 className="text-lg font-semibold">Status</h2>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -129,7 +129,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div className="bg-zinc-100 p-4 rounded-lg shadow">
+        <div className="bg-blue-200 p-4 rounded-lg shadow">
 
           <table className="w-full mb-4">
             <thead>
@@ -154,7 +154,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="bg-zinc-100 p-4 rounded-lg shadow">
+      <div className="bg-blue-200 p-4 rounded-lg shadow">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold">Upcoming Appointments</h2>
         </div>
