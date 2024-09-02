@@ -22,8 +22,8 @@ function PatientBook() {
     }
   }, [])
   return (
-    <div>
-      <div className="min-h-screen bg-zinc-100 flex">
+    <div >
+      <div className="min-h-screen bg-blue-400 flex">
         <div className="w-64 bg-white p-5 flex flex-col gap-3 min-w-64">
           <div className="mb-5 flex flex-col gap-2">
             <div className="flex items-center space-x-2">
@@ -106,7 +106,7 @@ export const Home = () => {
   const appointments = JSON.parse(localStorage.getItem('appointment'));
   const session = JSON.parse(localStorage.getItem('session'));
   return <div className="w-full h-full">
-    <div className="bg-white p-8 ">
+    <div className="bg-blue-400 p-8 h-full">
       <div className="flex justify-between items-center mb-8">
         <div className="text-right">
           <span className="text-lg">Today's Date</span>

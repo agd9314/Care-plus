@@ -16,7 +16,7 @@ function Register() {
   })
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('http://localhost:3000/api/user/register', {
+      const res = await axios.post('http://localhost:5000/api/user/register', {
         name: register.name,
         email: register.email,
         password: register.password,
@@ -61,7 +61,7 @@ function Register() {
               }}>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="others">Others💀</option>
+              <option value="others">Others</option>
             </select>
           </div>
 

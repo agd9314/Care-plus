@@ -4,7 +4,7 @@ import axios from "axios";
 export const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
     useEffect( ()=>{
-        axios.get("http://localhost:3000/api/user/getallappointments", {
+        axios.get("http://localhost:5000/api/user/getallappointments", {
             headers : {
                 Authorization : `Bearer ${localStorage.getItem('token')}`
             }
@@ -55,6 +55,6 @@ export const MyBookings = () => {
                     </div>
                 })}
 
-            </div>:<div className="text-lg flex justify-center items-center font-semibold h-full w-full">No Booking</div>}
+            </div>:<div className="text-lg flex justify-center items-center font-semibold h-full w-full">No Bookings</div>}
     </div>
 }

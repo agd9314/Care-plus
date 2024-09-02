@@ -22,7 +22,7 @@ function RegisterDoctor() {
     })
     const handleSumbit =async () => {
         try {
-            const res = await axios.post('http://localhost:3000/api/doctor/register', {
+            const res = await axios.post('http://localhost:5000/api/doctor/register', {
                 name: doctorDetail.name,
                 email: doctorDetail.email,
                 password: doctorDetail.password,
@@ -77,7 +77,7 @@ function RegisterDoctor() {
                               }}>
                               <option value="male">Male</option>
                               <option value="female">Female</option>
-                              <option value="others">Others💀</option>
+                              <option value="others">Others</option>
                           </select>
                       </div>
 

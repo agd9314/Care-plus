@@ -1,12 +1,31 @@
-import React from "react";
-import {Outlet} from "react-router-dom";
-import Home from "./components/Home";
+import React, { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import Home from './components/Home';
+import LoadingScreen from './components/Loading'; // Import your loading component
+import Landingpage from './components/Landingpage';
+
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading data or performing some asynchronous task
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
-      <>
-        <Outlet />
-      </>
+      {loading ? (
+        <LoadingScreen /> // Render the loading component if loading is true
+      ) : (
+        <>
+
+          <Outlet />
+        </>
+      )}
     </div>
   );
 }
@@ -14,6 +33,7 @@ function App() {
 export const MainChildren = () => {
   return (
     <>
+    <Landingpage/>
       <Home />
     </>
   );

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 export const ScheduledSession = () => {
     const [session, setSession] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:3000/api/user/getallappointmentsTodayDate", {
+        axios.get("http://localhost:5000/api/user/getallappointmentsTodayDate", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }

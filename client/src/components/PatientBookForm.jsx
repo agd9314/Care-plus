@@ -17,7 +17,7 @@ export const PatientBookForm = () => {
   const handleSumbit = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/user/bookappointment",
+        "http://localhost:5000/api/user/bookappointment",
         {
           patientName: appointment.name,
           patientAge: parseInt(appointment.age),

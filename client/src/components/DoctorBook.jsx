@@ -78,7 +78,7 @@ export default DoctorBook
 export const   Mypatients  = () => {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/api/doctor/getallappointments", {
+    axios.get("http://localhost:5000/api/doctor/getallappointments", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('DoctorToken')}`
       }
